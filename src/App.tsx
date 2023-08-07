@@ -65,7 +65,7 @@ function App() {
           >
             {list1.map((item, index) => (
               <div key={`a-${index}`} className="outter">
-                {/* need to be vertualize */}
+                {/* need to be vertualized */}
                 <p>
                   <input type="checkbox" />
                   <div key={index}>
@@ -148,7 +148,7 @@ interface AllRowsProps {
 const AllRows = ({ data, index, style }: AllRowsProps) => {
   const item = data[index];
   return (
-    <div style={{ ...style }} key={`AllRows-${index}`}>
+    <div style={{ ...style, color:'gray' }} key={`AllRows-${index}`}>
       {/* {data.map((item: IPerson, index: number) => (
         <div key={`a-${index}`}>
           {item.name}
@@ -170,17 +170,20 @@ const AllRows = ({ data, index, style }: AllRowsProps) => {
           </p>
         </div>
       ))} */}
+      <div style={{ margin:'5px auto', display:'flex', flexWrap:'nowrap', justifyContent:'center' }}>
+       <div>hey !!</div>
       {Object.entries(item).map(([key, value]) => {
         if (!excludeProperties.includes(key)) {
           return (
             <div key={key}>
-              <strong>{key}: </strong>
+              {/* <strong>{key}: </strong> */}
               {value}
             </div>
           );
         }
         return null;
       })}
+      </div>
     </div>
   );
 };
