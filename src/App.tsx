@@ -11,7 +11,7 @@ function App() {
 
   const BigStringList = () => {
     const list: string[] = [];
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 30000; i++) {
       list.push(`Item -- ${i}`);
     }
     return list;
@@ -34,7 +34,7 @@ function App() {
           display: "flex",
           flexDirection: "row",
           width: "90%",
-          margin: "auto",
+          margin: "50px auto",
           justifyContent: "space-around",
         }}
       >
@@ -78,7 +78,7 @@ function App() {
             }}
           >
             <AutoSizer>
-              {({ height, width }) => (
+              {({ height, width }:{height:number, width:number}) => (
                 <List
                   width={width}
                   height={height}
