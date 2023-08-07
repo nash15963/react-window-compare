@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import "./App.css";
 import { FixedSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
-import ObjExample from "./ObjExample";
 
 interface IPerson {
   name: string;
@@ -14,7 +13,7 @@ interface IPerson {
 
 const excludeProperties = ["propertyToExclude1", "propertyToExclude2", "uuid"];
 
-function App() {
+function ObjExample() {
   const [list1, setList1] = useState<IPerson[]>([]);
   const [list2, setList2] = useState<IPerson[]>([]);
 
@@ -117,12 +116,11 @@ function App() {
           </div>
         </div>
       </div>
-      <ObjExample/>
     </div>
   );
 }
 
-export default App;
+export default ObjExample;
 
 interface RowProps {
   data: string[];
